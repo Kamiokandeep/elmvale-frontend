@@ -81,7 +81,7 @@
     font-weight: 500;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
     .events-section {
         padding-bottom: 2rem;

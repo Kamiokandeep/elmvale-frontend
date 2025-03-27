@@ -1,0 +1,48 @@
+.about-section {
+    min-height: 100vh;
+}
+
+.about-card {
+    padding-top: 120px;
+    padding-bottom: 50px;
+}
+
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    border: none;
+}
+
+.img-fluid {
+    transition: transform 0.5s ease;
+}
+
+.img-fluid:hover {
+    transform: scale(1.03);
+}
+
+.btn-success {
+    background-color: #115D5A !important;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 767.98px) {
+    .about-section {
+        padding: 60px 0 !important;
+    }
+
+    .p-5 {
+        padding: 2rem !important;
+    }
+
+    .img-fluid {
+        height: 300px !important;
+        width: 100%;
+    }
+}
