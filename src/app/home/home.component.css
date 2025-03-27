@@ -1,3 +1,4 @@
+/* Hero Section */
 .hero-section {
     position: relative;
     height: 100vh;
@@ -53,4 +54,40 @@
     color: white !important;
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Events Section */
+.events-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.card {
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
+}
+
+.btn-outline-success {
+    --bs-btn-color: #115D5A;
+    --bs-btn-border-color: #115D5A;
+    --bs-btn-hover-bg: #115D5A;
+    --bs-btn-hover-border-color: #115D5A;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .events-section {
+        padding-bottom: 2rem;
+    }
+
+    .card {
+        margin-bottom: 1.5rem;
+    }
 }
