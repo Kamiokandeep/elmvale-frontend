@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top"
+    style="background-color: rgba(0, 0, 0, 0.4); backdrop-filter: blur(8px);">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/">
+            <img src="/elmvale_logo.png" alt="Elmvale Logo" class="navbar-logo">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{exact: true}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/education" routerLinkActive="active">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/resources" routerLinkActive="active">Resources</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/gallery" routerLinkActive="active">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
+                </li>
+            </ul>
+
+            <div class="d-flex">
+                <button routerLink="/login" class="btn btn-outline-light me-2">Login</button>
+                <button routerLink="/signup" class="btn btn-dark">Sign-up</button>
+            </div>
+        </div>
+    </div>
+</nav>
