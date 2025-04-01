@@ -6,6 +6,7 @@ body {
     height: 80px;
     width: auto;
     transition: transform 0.3s ease;
+    padding-left: 20px;
 }
 
 .navbar-brand:hover .navbar-logo {
