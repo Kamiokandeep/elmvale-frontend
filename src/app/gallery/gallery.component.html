@@ -1,13 +1,103 @@
-<div class="container">
+<!-- Main Gallery Section -->
+<section class="photo-gallery container my-5">
+    <img src="gallery/Arboretum Sunnidale park- 2023-1.jpg" alt="photo-gallery" height="600px" width="900px"/>
+    <p class="text-center" color="green" style="font-size: 1.2rem; margin-top: 1rem;">
+      A picture is worth a thousand words! Explore the beauty of our gardens, events, and
+      photography contests.
+    </p>
 
-    <!-- gallery Section -->
-    <div class="gallery-section" style="background-color: #115D5A;">
-        <div class="container">
-            <div class="row justify-content-center">
-
-            </div>
-        </div>
+    <!-- Photo Gallery  -->
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="openLightbox(0)">
+        <img src="gallery/Aboretum Sunnidale Park-2023-2.jpg" alt="Aboretum Sunnidale" />
+        <div class="caption">Aboretum Sunnidale</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(1)">
+        <img src="gallery/Annual Meeting Nov -2024-Photo Contest.jpg" alt="Annual Meeting" />
+        <div class="caption">Amalading</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(2)">
+        <img src="gallery/Aboretum Sunnidale Park-2023-3.jpg" alt="Armistiding" />
+        <div class="caption">Armistiding</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(3)">
+        <img src="gallery/Annual Meeting-Nov 2024-1.jpg" alt="EHS - Pitchards Way" />
+        <div class="caption">EHS - Pitchards Way</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(4)">
+        <img src="gallery/Annual Meeting-Nov 2024-3.jpg" alt="EHS - Dementa" />
+        <div class="caption">EHS - Dementa</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(5)">
+        <img src="gallery/Christmas arrangments-1.jpg" alt="Clif Adams Imperialis" />
+        <div class="caption">Clif Adams Imperialis</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(6)">
+        <img src="gallery/Christmas arrangments-2.jpg" alt="EHS - Heskey Hybrid" />
+        <div class="caption">EHS - Heskey Hybrid</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(7)">
+        <img src="gallery/EDGE Commitee- Nov 2023-1.jpg" alt="EHS - BWeidling" />
+        <div class="caption">EHS - BWeidling</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(8)">
+        <img src="gallery/EDGE- Garden Tour Jul 2024-1.jpg" alt="EHS - The big sign" />
+        <div class="caption">EHS - The big sign</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(9)">
+        <img src="gallery/EDGE-Nov Speaker-1.jpg" alt="EHS - Photo Group" />
+        <div class="caption">EHS - Photo Group</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(10)">
+        <img src="gallery/Plant Sale -2023-1.jpg" alt="EHS - Photo Group 2" />
+        <div class="caption">EHS - Photo Group 2</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(11)">
+        <img src="gallery/Plant Sale 2023-2.jpg" alt="EHS - Photo Group 3" />
+        <div class="caption">EHS - Photo Group 3</div>
+      </div>
     </div>
+  </section>
+
+  <!-- Photo Contest Winners Section -->
+  <section class="photo-contest-winners container mb-5">
+    <h2 class="text-center">Photo Contest Winners</h2>
+    <p class="text-center">
+      Each year, our members showcase their photography skills by capturing gardens, flowers,
+      birds, and nature. Winning photos are featured on our site.
+    </p>
+
+    
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="openLightbox(12)">
+        <img src="gallery/Market Garden Tour-3.jpg" alt="EHS - Painted lady" />
+        <div class="caption">EHS - Painted lady</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(13)">
+        <img src="gallery/Market Garden Tour-2.jpg" alt="Oak pathboard walks" />
+        <div class="caption">Oak pathboard walks</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(14)">
+        <img src="gallery/Market Garden Tour-1.jpg"Another Winner" />
+        <div class="caption">Another Winner</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(14)">
+        <img src="gallery/winner.png" alt="Another Winner soon" />
+        <div class="caption">Another Winner soon </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox-modal" class="lightbox-modal">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img class="lightbox-content" id="lightbox-image" alt="Modal Image" />
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+
+    <!-- Navigation arrows -->
+    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+  </div>
 
     <!-- footer Section -->
     <footer class="footer-section py-5" style="background-color: #115D5A; color: white;">
