@@ -9,8 +9,8 @@ import { ResourcesComponent } from './resources/resources.component';
 import { BursariesComponent } from './bursaries/bursaries.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { ContactComponent } from './contact/contact.component';
-import { LoginComponent } from './pages/login/login.component';
-import { SignupComponent } from './pages/signup/signup.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
