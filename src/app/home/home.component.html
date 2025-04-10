@@ -7,6 +7,14 @@
     </div>
 </div>
 
+<div class="hero-section">
+    <div class="hero-image" [ngStyle]="{'background-image': 'url(' + homeContent?.heroImage + ')'}"></div>
+    <div class="hero-content">
+        <h1>{{ homeContent?.heroTitle }}</h1>
+        <a [routerLink]="'/about'" class="btn btn-primary">{{ homeContent?.heroButtonText }}</a>
+    </div>
+</div>
+
 <div class="container">
     <!-- Welcome Section -->
     <div class="container-fluid py-5 bg-white">
@@ -29,8 +37,7 @@
             <div class="col-md-6">
                 <div class="px-4">
                     <h2 class="mb-4" style="color: #115D5A;">Our Mission</h2>
-                    <div class="divider mb-4"
-                        style="height: 3px; width: 80px; background-color: #115D5A;"></div>
+                    <div class="divider mb-4" style="height: 3px; width: 80px; background-color: #115D5A;"></div>
                     <p class="lead">
                         At Elmvale Horticultural Society, we are passionate about promoting the beauty of nature and
                         fostering a greener, more sustainable community.</p>

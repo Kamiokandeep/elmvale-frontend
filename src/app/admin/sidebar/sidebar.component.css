@@ -1,0 +1,36 @@
+.sidebar {
+    width: 250px;
+    height: 100%;
+    background-color: #343a40;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.sidebar-header {
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    text-align: center;
+    color: white;
+}
+
+.nav {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.nav-item {
+    margin: 10px 0;
+}
+
+a.nav-link {
+    cursor: pointer;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a.nav-link:hover {
+    text-decoration: underline;
+}

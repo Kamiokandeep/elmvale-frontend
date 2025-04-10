@@ -1,0 +1,18 @@
+<div class="container mt-5">
+    <h2>Edit Hero Section</h2>
+    <form (ngSubmit)="save()" #form="ngForm">
+        <div class="mb-3">
+            <label for="heroTitle" class="form-label">Hero Title</label>
+            <input type="text" class="form-control" id="heroTitle" [(ngModel)]="homeContent.heroTitle" name="heroTitle">
+        </div>
+        <div class="mb-3">
+            <label for="heroImage" class="form-label">Hero Image URL</label>
+            <input type="text" class="form-control" id="heroImage" [(ngModel)]="homeContent.heroImage" name="heroImage">
+        </div>
+        <div class="mb-3">
+            <label for="heroButtonText" class="form-label">Button Text</label>
+            <input type="text" class="form-control" id="heroButtonText" [(ngModel)]="homeContent.heroButtonText" name="heroButtonText">
+        </div>
+        <button class="btn btn-success" type="submit">Save</button>
+    </form>
+</div>

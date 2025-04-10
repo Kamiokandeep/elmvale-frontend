@@ -1,0 +1,13 @@
+.container {
+    padding-top: 120px;
+    padding-bottom: 50px;
+}
+
+.admin-container {
+    display: flex;
+}
+
+.admin-content {
+    flex: 1;
+    padding: 20px;
+}

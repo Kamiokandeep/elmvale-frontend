@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { EducationComponent } from './education/education.component';
 import { MembershipComponent } from './membership/membership.component';
 import { EventsComponent } from './events/events.component';
 import { NewsComponent } from './news/news.component';
@@ -11,18 +10,38 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { EditHomeComponent } from './admin/edit-home/edit-home.component';
+import { EditAboutComponent } from './admin/edit-about/edit-about.component';
+import { EditEventsComponent } from './admin/edit-events/edit-events.component';
+import { EditNewsComponent } from './admin/edit-news/edit-news.component';
+import { EditResourcesComponent } from './admin/edit-resources/edit-resources.component';
+import { EditBursariesComponent } from './admin/edit-bursaries/edit-bursaries.component';
+import { EditGalleryComponent } from './admin/edit-gallery/edit-gallery.component';
+import { EditContactComponent } from './admin/edit-contact/edit-contact.component';
+import { EditMembersComponent } from './admin/edit-members/edit-members.component';
 
 export const routes: Routes = [
-    { path: '', component: HomeComponent },
-    { path: 'about', component: AboutComponent },
-    { path: 'education', component: EducationComponent },
-    { path: 'membership', component: MembershipComponent },
-    { path: 'events', component: EventsComponent },
-    { path: 'news', component: NewsComponent },
-    { path: 'resources', component: ResourcesComponent },
-    { path: 'bursaries', component: BursariesComponent },
-    { path: 'gallery', component: GalleryComponent },
-    { path: 'contact', component: ContactComponent },
-    { path: 'login', component: LoginComponent },
-    { path: 'signup', component: SignupComponent },
+  { path: '', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'membership', component: MembershipComponent },
+  { path: 'events', component: EventsComponent },
+  { path: 'news', component: NewsComponent },
+  { path: 'resources', component: ResourcesComponent },
+  { path: 'bursaries', component: BursariesComponent },
+  { path: 'gallery', component: GalleryComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'admin', component: AdminDashboardComponent, children: [
+    { path: 'home', component: EditHomeComponent },
+    { path: 'about', component: EditAboutComponent },
+    { path: 'events', component: EditEventsComponent },
+    { path: 'news', component: EditNewsComponent },
+    { path: 'resources', component: EditResourcesComponent },
+    { path: 'bursaries', component: EditBursariesComponent },
+    { path: 'gallery', component: EditGalleryComponent },
+    { path: 'contact', component: EditContactComponent },
+    { path: 'members', component: EditMembersComponent },
+  ]},
 ];
