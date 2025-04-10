@@ -17,6 +17,8 @@ export class EditHomeComponent implements OnInit {
     welcomeTitle: '',
     missionTitle: '',
     missionDescription: '',
+    missionParagraph1: '',
+    missionParagraph2: '',
     missionImage: ''
   };
 

@@ -1,12 +1,5 @@
 <!-- Hero Section -->
 <div class="hero-section">
-    <div class="hero-image"></div>
-    <div class="hero-content container text-center text-white">
-        <h1 class="display-1 fw-bold">Growing Together</h1>
-    </div>
-</div>
-
-<div class="hero-section">
     <div class="hero-image" [ngStyle]="{'background-image': 'url(' + homeContent?.heroImage + ')'}"></div>
     <div class="hero-content container text-center text-white">
         <h1 class="display-1 fw-bold">{{ homeContent?.heroTitle }}</h1>
@@ -18,7 +11,7 @@
     <div class="container-fluid py-5 bg-white">
         <div class="row justify-content-center">
             <div class="col-12 text-center">
-                <h1 class="display-4 fw-bold" style="color: #115D5A;">Welcome to Elmvale Horticultural Society!</h1>
+                <h1 class="display-4 fw-bold" style="color: #115D5A;">{{ homeContent?.welcomeTitle }}</h1>
                 <div class="divider mx-auto"
                     style="height: 3px; width: 80px; background-color: #115D5A; margin: 1rem auto;"></div>
             </div>
@@ -34,18 +27,11 @@
             </div>
             <div class="col-md-6">
                 <div class="px-4">
-                    <h2 class="mb-4" style="color: #115D5A;">Our Mission</h2>
+                    <h2 class="mb-4" style="color: #115D5A;">{{ homeContent?.missionTitle }}</h2>
                     <div class="divider mb-4" style="height: 3px; width: 80px; background-color: #115D5A;"></div>
-                    <p class="lead">
-                        At Elmvale Horticultural Society, we are passionate about promoting the beauty of nature and
-                        fostering a greener, more sustainable community.</p>
-                    <p>
-                        As a non-profit organization, we educate and inspire through various activities, including
-                        gardening workshops, community beautification projects, and environmental advocacy.</p>
-                    <p>
-                        Join us in celebrating the joys of horticulture, from planting trees and flowers to supporting
-                        local green spaces. Whether you're an experienced gardener or just starting, there's a place for
-                        you here. Together, we grow, learn, and contribute to a brighter, more beautiful world!</p>
+                    <p class="lead">{{ homeContent?.missionDescription }}</p>
+                    <p>{{ homeContent?.missionParagraph1 }}</p>
+                    <p>{{ homeContent?.missionParagraph2 }}</p>
                 </div>
             </div>
         </div>
