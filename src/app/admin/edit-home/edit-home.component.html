@@ -1,5 +1,6 @@
 <div class="container mt-5">
-  <h2>Edit Hero Section</h2>
+  <h2>Edit Home Page</h2>
+  <h4 class="mt-4">Section 1</h4>
   <form (ngSubmit)="save()" #form="ngForm">
     <!-- Hero Section -->
     <div class="mb-3">
@@ -13,7 +14,7 @@
     </div>
 
     <!-- Welcome Section -->
-    <h4 class="mt-4">Welcome Section</h4>
+    <h4 class="mt-4">Section 2</h4>
     <div class="mb-3">
       <label for="welcomeTitle" class="form-label">Welcome Title</label>
       <input type="text" class="form-control" id="welcomeTitle" [(ngModel)]="homeContent.welcomeTitle"
@@ -21,7 +22,7 @@
     </div>
 
     <!-- Mission Section -->
-    <h4 class="mt-4">Mission Section</h4>
+    <h4 class="mt-4">Section 3</h4>
     <div class="mb-3">
       <label for="missionTitle" class="form-label">Mission Title</label>
       <input type="text" class="form-control" id="missionTitle" [(ngModel)]="homeContent.missionTitle"
