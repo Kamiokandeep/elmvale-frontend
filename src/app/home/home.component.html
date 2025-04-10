@@ -8,9 +8,8 @@
 
 <div class="hero-section">
     <div class="hero-image" [ngStyle]="{'background-image': 'url(' + homeContent?.heroImage + ')'}"></div>
-    <div class="hero-content">
-        <h1>{{ homeContent?.heroTitle }}</h1>
-        <a [routerLink]="'/about'" class="btn btn-primary">{{ homeContent?.heroButtonText }}</a>
+    <div class="hero-content container text-center text-white">
+        <h1 class="display-1 fw-bold">{{ homeContent?.heroTitle }}</h1>
     </div>
 </div>
 
