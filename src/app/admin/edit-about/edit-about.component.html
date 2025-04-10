@@ -1,4 +1,128 @@
-<div class="container mt-5">
-    <h2>Edit</h2>
-    <p>edit-about works!</p>
+<div class="container py-5">
+    <h2 class="mb-4">Edit About Page</h2>
+    <h4 class="mt-4">Section 1</h4>
+    <form (ngSubmit)="save()">
+
+        <!-- History -->
+        <div class="mb-4">
+            <label class="form-label">History Title</label>
+            <input type="text" [(ngModel)]="aboutContent.historyTitle" name="historyTitle" class="form-control" />
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label">History Description</label>
+            <textarea [(ngModel)]="aboutContent.historyDescription" name="historyDescription" rows="4"
+                class="form-control"></textarea>
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label">History Paragraph</label>
+            <textarea [(ngModel)]="aboutContent.historyParagraph" name="historyParagraph" rows="4"
+                class="form-control"></textarea>
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label">History Image URL</label>
+            <input type="text" [(ngModel)]="aboutContent.historyImage" name="historyImage" class="form-control" />
+        </div>
+
+        <hr />
+
+        <!-- Evolution -->
+        <div class="mb-4">
+            <label class="form-label">Evolution Title</label>
+            <input type="text" [(ngModel)]="aboutContent.evolutionTitle" name="evolutionTitle" class="form-control" />
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label">Evolution Description</label>
+            <textarea [(ngModel)]="aboutContent.evolutionDescription" name="evolutionDescription" rows="4"
+                class="form-control"></textarea>
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label">Evolution Paragraph</label>
+            <textarea [(ngModel)]="aboutContent.evolutionParagraph" name="evolutionParagraph" rows="4"
+                class="form-control"></textarea>
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label">Evolution Image URL</label>
+            <input type="text" [(ngModel)]="aboutContent.evolutionImage" name="evolutionImage" class="form-control" />
+        </div>
+
+        <hr />
+
+        <!-- Mission & Objectives -->
+        <h4 class="mt-4">Section 2</h4>
+        <div class="mb-4">
+            <label class="form-label">Mission Title</label>
+            <input type="text" [(ngModel)]="aboutContent.missionTitle" name="missionTitle" class="form-control" />
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label">Mission Sub-Title</label>
+            <input type="text" [(ngModel)]="aboutContent.missionSubTitle" name="missionSubTitle" class="form-control" />
+        </div>
+
+        <!-- Add New Missions-->
+        <div class="mb-4">
+            <label class="form-label">Mission cards</label>
+
+            <div *ngIf="aboutContent.missionObjectives.length === 0" class="text-muted mb-2">
+                No objectives added yet.
+            </div>
+
+            <div *ngFor="let item of aboutContent.missionObjectives; let i = index" class="mb-3">
+                <!-- title -->
+                <input type="text" [(ngModel)]="item.title" name="missionTitle{{i}}" class="form-control mb-2"
+                    placeholder="Objective title" />
+
+                <!-- description -->
+                <textarea [(ngModel)]="item.description" name="missionDesc{{i}}" class="form-control" rows="2"
+                    placeholder="Objective description"></textarea>
+            </div>
+
+            <!-- button -->
+            <button class="btn btn-sm btn-outline-success mt-2" (click)="addMissionObjective()">+ Add Objective</button>
+        </div>
+
+        <hr />
+
+        <!-- Meeting Info -->
+        <h4 class="mt-4">Section 3</h4>
+        <div class="mb-4">
+            <label class="form-label">Meeting Title</label>
+            <input type="text" [(ngModel)]="aboutContent.meetingTitle" name="meetingTitle" class="form-control" />
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label">Meeting Sub-Title</label>
+            <input type="text" [(ngModel)]="aboutContent.meetingSubTitle" name="meetingSubTitle" class="form-control" />
+        </div>
+
+        <!-- Add New Meetings -->
+        <div class="mb-4">
+            <label class="form-label">Meeting cards</label>
+
+            <div *ngIf="aboutContent.meetingObjectives.length === 0" class="text-muted mb-2">
+                No objectives added yet.
+            </div>
+
+            <div *ngFor="let item of aboutContent.meetingObjectives; let i = index" class="mb-3">
+                <!-- title -->
+                <input type="text" [(ngModel)]="item.title" name="meetingTitle{{i}}" class="form-control mb-2"
+                    placeholder="Objective title" />
+
+                <!-- description -->
+                <textarea [(ngModel)]="item.description" name="meetingDesc{{i}}" class="form-control" rows="2"
+                    placeholder="Objective description"></textarea>
+            </div>
+
+            <!-- button -->
+            <button class="btn btn-sm btn-outline-success mt-2" (click)="addMeetingObjective()">+ Add Objective</button>
+        </div>
+
+        <button type="submit" class="btn btn-sm btn-outline-success mt-2">Save</button>
+    </form>
 </div>

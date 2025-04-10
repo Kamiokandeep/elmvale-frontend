@@ -11,61 +11,49 @@
                         <div class="row g-0">
                             <!-- Our History -->
                             <div class="col-md-6 p-5">
-                                <h2 class="display-5 fw-bold mb-4" style="color: #115D5A;">Our History</h2>
+                                <h2 class="display-5 fw-bold mb-4" style="color: #115D5A;">{{ aboutContent?.historyTitle
+                                    }}</h2>
                                 <div class="divider mb-4"
                                     style="height: 3px; width: 80px; background-color: #115D5A; opacity: 0.5;"></div>
 
-                                <p class="lead text-dark">
-                                    The Elmvale and District Horticultural Society was founded in 1949 in Elmvale and
-                                    the surrounding municipalities of Flos and Medonte, now part of the Township of
-                                    Springwater.
-                                </p>
+                                <p class="lead text-dark">{{ aboutContent?.historyDescription }}</p>
 
-                                <p class="text-dark">
-                                    Since its creation, our society has been dedicated to horticulture, floral artistry,
-                                    environmental stewardship, and education.
-                                </p>
+                                <p class="text-dark">{{ aboutContent?.historyParagraph }}</p>
                             </div>
 
                             <!-- Img -->
                             <div class="col-md-6">
-                                <img src="/edge-speaker.jpg" alt="Elmvale Horticultural Society Members"
+                                <img [src]="aboutContent?.historyImage" alt="Elmvale Horticultural Society Members"
                                     class="img-fluid h-100" style="object-fit: cover;">
                             </div>
                         </div>
 
-
                         <div class="row g-0 border-top">
                             <!-- Img -->
                             <div class="col-md-6 p-5 d-flex align-items-center justify-content-center">
-                                <img src="/Trillium Flower.png" alt="Trillium Flower" class="img-fluid"
+                                <img [src]="aboutContent?.evolutionImage" alt="Trillium Flower" class="img-fluid"
                                     style="max-height: 250px; width: auto;">
                             </div>
 
                             <!-- Our Evolution -->
                             <div class="col-md-6 p-5">
-                                <h2 class="display-5 fw-bold mb-4" style="color: #115D5A;">Our Evolution</h2>
+                                <h2 class="display-5 fw-bold mb-4" style="color: #115D5A;">{{
+                                    aboutContent?.evolutionTitle }}</h2>
                                 <div class="divider mb-4"
                                     style="height: 3px; width: 80px; background-color: #115D5A; opacity: 0.5;"></div>
 
-                                <p class="text-dark">
-                                    Recognizing our evolving role as educators and environmental advocates, we rebranded
-                                    in 2019 as Elmvale District Garden Enthusiasts (E.D.G.E.).
-                                </p>
+                                <p class="text-dark">{{ aboutContent?.evolutionDescription }}</p>
 
-                                <p class="text-dark">
-                                    This name reflects our mission to promote gardening, community beautification, and
-                                    sustainability. Our floral emblem, the geranium, symbolizes our commitment to
-                                    fostering growth and environmental awareness.
-                                </p>
+                                <p class="text-dark">{{ aboutContent?.evolutionParagraph }}</p>
                             </div>
                         </div>
+
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
-
 
     <!-- Mission Section -->
     <div class="mission-section py-5">
@@ -73,103 +61,26 @@
 
             <div class="row justify-content-center mb-5">
                 <div class="col-12 text-center">
-                    <h2 class="display-4 fw-bold" style="color: #115D5A;">Our Mission & Objectives</h2>
+                    <h2 class="display-4 fw-bold" style="color: #115D5A;">{{ aboutContent?.missionTitle }}</h2>
                     <div class="divider mx-auto"
                         style="height: 3px; width: 80px; background-color: #115D5A; margin: 1rem auto;"></div>
-                    <p class="lead">At E.D.G.E., our mission is to:</p>
+                    <p class="lead">{{ aboutContent?.missionSubTitle }}</p>
                 </div>
             </div>
 
-            <!-- Row 1 -->
-            <div class="row g-4 mb-4">
-                <!-- Card 1 -->
-                <div class="col-md-4">
+            <div class="row g-4 mb-4" *ngIf="aboutContent?.missionObjectives?.length">
+                <div class="col-md-4" *ngFor="let item of aboutContent?.missionObjectives">
                     <div class="card h-100 border-0 shadow-sm">
                         <div class="card-body text-center p-4" style="background-color: #115D5A;">
-                            <h3 class="card-title fs-3" style="color: #ffffff;">Educate</h3>
+                            <h3 class="card-title fs-3" style="color: #ffffff;">{{ item.title }}</h3>
                             <div class="divider mx-auto"
                                 style="height: 2px; width: 50px; background-color: #ffffff; margin: 0.5rem auto;"></div>
-                            <p class="card-text" style="color: #ffffff;">
-                                The community about gardening, environmental preservation, and sustainability.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body text-center p-4" style="background-color: #115D5A;">
-                            <h3 class="card-title fs-3" style="color: #ffffff;">Encourage</h3>
-                            <div class="divider mx-auto"
-                                style="height: 2px; width: 50px; background-color: #ffffff; margin: 0.5rem auto;"></div>
-                            <p class="card-text" style="color: #ffffff;">
-                                The planting of trees, flowers, and shrubs to beautify our surroundings.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body text-center p-4" style="background-color: #115D5A;">
-                            <h3 class="card-title fs-3" style="color: #ffffff;">Promote</h3>
-                            <div class="divider mx-auto"
-                                style="height: 2px; width: 50px; background-color: #ffffff; margin: 0.5rem auto;"></div>
-                            <p class="card-text" style="color: #ffffff;">
-                                Civic beautification through garden projects and tree planting.
-                            </p>
+                            <p class="card-text" style="color: #ffffff;">{{ item.description }}</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Row 2 -->
-            <div class="row g-4">
-                <!-- Card 4 -->
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body text-center p-4" style="background-color: #115D5A;">
-                            <h3 class="card-title fs-3" style="color: #ffffff;">Support</h3>
-                            <div class="divider mx-auto"
-                                style="height: 2px; width: 50px; background-color: #ffffff; margin: 0.5rem auto;"></div>
-                            <p class="card-text" style="color: #ffffff;">
-                                Local students with bursaries to further their studies in horticulture.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body text-center p-4" style="background-color: #115D5A;">
-                            <h3 class="card-title fs-3" style="color: #ffffff;">Provide</h3>
-                            <div class="divider mx-auto"
-                                style="height: 2px; width: 50px; background-color: #ffffff; margin: 0.5rem auto;"></div>
-                            <p class="card-text" style="color: #ffffff;">
-                                Engaging events, workshops, and speakers to inspire and inform our members.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body text-center p-4" style="background-color: #115D5A;">
-                            <h3 class="card-title fs-3" style="color: #ffffff;">Our Commitment</h3>
-                            <div class="divider mx-auto"
-                                style="height: 2px; width: 50px; background-color: #ffffff; margin: 0.5rem auto;"></div>
-                            <p class="card-text" style="color: #ffffff;">
-                                Through our monthly meetings, workshops, and community projects, we strive to create a
-                                greener and more vibrant environment for everyone.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -179,65 +90,24 @@
 
             <div class="row justify-content-center">
                 <div class="col-12 text-center mb-5">
-                    <h2 class="display-5 fw-bold" style="color: #115D5A;">Meeting Location & Schedule</h2>
+                    <h2 class="display-5 fw-bold" style="color: #115D5A;">{{ aboutContent?.meetingTitle }}</h2>
                     <div class="divider mx-auto"
                         style="height: 3px; width: 80px; background-color: #115D5A; margin: 1rem auto;"></div>
+                    <p class="lead">{{ aboutContent?.meetingSubTitle }}</p>
                 </div>
             </div>
 
-            <!-- Cards -->
-            <div class="row g-4">
-                <!-- Card 1 -->
-                <div class="col-md-3">
+            <div class="row g-4" *ngIf="aboutContent?.meetingObjectives?.length">
+                <div class="col-md-3" *ngFor="let item of aboutContent?.meetingObjectives">
                     <div class="card h-100 border-0 shadow-sm p-4">
-                        <h3 class="fs-4" style="color: #115D5A;">Where We Meet</h3>
+                        <h3 class="fs-4" style="color: #115D5A;">{{ item.title }}</h3>
                         <div class="divider mb-3" style="height: 2px; width: 50px; background-color: #115D5A;"></div>
-                        <p>
-                            Elmvale Legion – 7 John Street, Elmvale, ON<br>
-                            (Upstairs – Lift available for accessibility)
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="col-md-3">
-                    <div class="card h-100 border-0 shadow-sm p-4">
-                        <h3 class="fs-4" style="color: #115D5A;">When We Meet</h3>
-                        <div class="divider mb-3" style="height: 2px; width: 50px; background-color: #115D5A;"></div>
-                        <p>
-                            Every 4th Wednesday of the month at 7 p.m.<br>
-                            (except January, February, August, and December)
-                        </p>
-                        <p class="mt-2">
-                            Meetings include guest speakers, gardening tips, and networking opportunities.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="col-md-3">
-                    <div class="card h-100 border-0 shadow-sm p-4">
-                        <h3 class="fs-4" style="color: #115D5A;">Special Events</h3>
-                        <div class="divider mb-3" style="height: 2px; width: 50px; background-color: #115D5A;"></div>
-                        <p>
-                            Annual Plant Sale – May 24, 2025<br>
-                            at Heritage Park, Hwy 92, Elmvale
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="col-md-3">
-                    <div class="card h-100 border-0 shadow-sm p-4">
-                        <h3 class="fs-4" style="color: #115D5A;">Exclusive Visits</h3>
-                        <div class="divider mb-3" style="height: 2px; width: 50px; background-color: #115D5A;"></div>
-                        <p>
-                            Off-Site Meetings (Members Only)<br>
-                            Exclusive visits to special gardens & farms
-                        </p>
+                        <p>{{ item.description }}</p>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
+
 </div>
