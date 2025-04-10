@@ -14,7 +14,6 @@ export class EditHomeComponent implements OnInit {
   homeContent: HomeContent = {
     heroImage: '',
     heroTitle: '',
-    heroButtonText: '',
     welcomeTitle: '',
     missionTitle: '',
     missionDescription: '',

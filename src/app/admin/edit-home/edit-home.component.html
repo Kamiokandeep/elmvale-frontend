@@ -1,18 +1,42 @@
 <div class="container mt-5">
     <h2>Edit Hero Section</h2>
     <form (ngSubmit)="save()" #form="ngForm">
-        <div class="mb-3">
-            <label for="heroTitle" class="form-label">Hero Title</label>
-            <input type="text" class="form-control" id="heroTitle" [(ngModel)]="homeContent.heroTitle" name="heroTitle">
-        </div>
-        <div class="mb-3">
-            <label for="heroImage" class="form-label">Hero Image URL</label>
-            <input type="text" class="form-control" id="heroImage" [(ngModel)]="homeContent.heroImage" name="heroImage">
-        </div>
-        <div class="mb-3">
-            <label for="heroButtonText" class="form-label">Button Text</label>
-            <input type="text" class="form-control" id="heroButtonText" [(ngModel)]="homeContent.heroButtonText" name="heroButtonText">
-        </div>
-        <button class="btn btn-success" type="submit">Save</button>
+      <!-- Hero Section -->
+      <div class="mb-3">
+        <label for="heroTitle" class="form-label">Hero Title</label>
+        <input type="text" class="form-control" id="heroTitle" [(ngModel)]="homeContent.heroTitle" name="heroTitle">
+      </div>
+  
+      <div class="mb-3">
+        <label for="heroImage" class="form-label">Hero Image URL</label>
+        <input type="text" class="form-control" id="heroImage" [(ngModel)]="homeContent.heroImage" name="heroImage">
+      </div>
+  
+      <!-- Welcome Section -->
+      <h4 class="mt-4">Welcome Section</h4>
+      <div class="mb-3">
+        <label for="welcomeTitle" class="form-label">Welcome Title</label>
+        <input type="text" class="form-control" id="welcomeTitle" [(ngModel)]="homeContent.welcomeTitle" name="welcomeTitle">
+      </div>
+  
+      <!-- Mission Section -->
+      <h4 class="mt-4">Mission Section</h4>
+      <div class="mb-3">
+        <label for="missionTitle" class="form-label">Mission Title</label>
+        <input type="text" class="form-control" id="missionTitle" [(ngModel)]="homeContent.missionTitle" name="missionTitle">
+      </div>
+  
+      <div class="mb-3">
+        <label for="missionDescription" class="form-label">Mission Description</label>
+        <textarea class="form-control" id="missionDescription" rows="4" [(ngModel)]="homeContent.missionDescription" name="missionDescription"></textarea>
+      </div>
+  
+      <div class="mb-3">
+        <label for="missionImage" class="form-label">Mission Image URL</label>
+        <input type="text" class="form-control" id="missionImage" [(ngModel)]="homeContent.missionImage" name="missionImage">
+      </div>
+  
+      <button class="btn btn-success mt-3" type="submit">Save</button>
     </form>
-</div>
+  </div>
+  
