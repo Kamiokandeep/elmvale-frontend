@@ -9,6 +9,7 @@ import { HomeContent } from '../../models/home-content.model';
   templateUrl: './edit-home.component.html',
   styleUrl: './edit-home.component.css'
 })
+
 export class EditHomeComponent implements OnInit {
 
   homeContent: HomeContent = {
