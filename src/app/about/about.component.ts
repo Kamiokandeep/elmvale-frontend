@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -7,6 +7,7 @@ import { AboutContentService } from '../services/about-content.service';
 
 @Component({
   selector: 'app-about',
+  standalone: true,
   imports: [FormsModule, RouterModule, CommonModule],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
@@ -15,7 +16,7 @@ import { AboutContentService } from '../services/about-content.service';
 export class AboutComponent {
   aboutContent: AboutContent | null = null;
 
-  constructor(private contentService: AboutContentService) { }
+  constructor(private contentService: AboutContentService) {}
 
   ngOnInit(): void {
     this.contentService.getAboutContent().subscribe(data => {

@@ -7,6 +7,7 @@ import { HomeContentService } from '../services/home-content.service';
 
 @Component({
   selector: 'app-home',
+  standalone: true,
   imports: [FormsModule, RouterModule, CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
