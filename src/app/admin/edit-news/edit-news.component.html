@@ -1,17 +1,17 @@
 <div class="container py-5">
-    <h2 class="mb-4">Manage the News Page</h2>
+    <h2 class="mb-4">Manage the News Content</h2>
     <form (ngSubmit)="save()">
 
         <!-- Section 1 -->
         <h4 class="mt-4">Section 1</h4>
         <hr />
         <div class="mb-4">
-            <label class="form-label">Hero Title</label>
+            <label class="form-label fw-bold">Hero Title</label>
             <input type="text" [(ngModel)]="newsContent.heroTitle" name="heroTitle" class="form-control" />
         </div>
 
         <div class="mb-4">
-            <label class="form-label">Hero Image URL</label>
+            <label class="form-label fw-bold">Hero Image URL</label>
             <input type="text" [(ngModel)]="newsContent.heroImage" name="heroImage" class="form-control" />
         </div>
 
@@ -19,7 +19,7 @@
         <h4 class="mt-4">Section 2</h4>
         <hr />
         <div class="mb-4">
-            <label class="form-label">Cards</label>
+            <label class="form-label fw-bold">Cards</label>
 
             <div *ngIf="newsContent.cards.length === 0" class="text-muted mb-2">
                 No news cards added yet.
@@ -27,22 +27,22 @@
 
             <div *ngFor="let card of newsContent.cards; let i = index" class="mb-3 border rounded p-3" style="background: #eeeeee;">
                 <div class="mb-3">
-                    <label class="form-label">Image URL</label>
+                    <label class="form-label fw-bold">Image URL</label>
                     <input type="text" [(ngModel)]="card.imageCard" name="imageCard{{i}}" class="form-control mb-2" placeholder="Image URL" />
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Title</label>
+                    <label class="form-label fw-bold">Title</label>
                     <input type="text" [(ngModel)]="card.titleCard" name="titleCard{{i}}" class="form-control mb-2" placeholder="Title" />
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Description</label>
+                    <label class="form-label fw-bold">Description</label>
                     <textarea [(ngModel)]="card.descriptionCard" name="descriptionCard{{i}}" class="form-control mb-2" rows="2" placeholder="Description"></textarea>
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Date</label>
+                    <label class="form-label fw-bold">Date</label>
                     <input type="date" [(ngModel)]="card.date" name="date{{i}}" class="form-control mb-2" />
                 </div>
 

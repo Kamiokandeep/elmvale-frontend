@@ -1,17 +1,17 @@
 <div class="container py-5">
-  <h2 class="mb-4">Manage the Home Us Page</h2>
+  <h2 class="mb-4">Manage the Home Content</h2>
   <form (ngSubmit)="save()" #form="ngForm">
 
     <!-- Hero Section -->
     <h4 class="mt-4">Section 1</h4>
     <hr />
     <div class="mb-3">
-      <label for="heroTitle" class="form-label">Hero Title</label>
+      <label for="heroTitle" class="form-label fw-bold">Hero Title</label>
       <input type="text" class="form-control" id="heroTitle" [(ngModel)]="homeContent.heroTitle" name="heroTitle">
     </div>
 
     <div class="mb-3">
-      <label for="heroImage" class="form-label">Hero Image URL</label>
+      <label for="heroImage" class="form-label fw-bold">Hero Image URL</label>
       <input type="text" class="form-control" id="heroImage" [(ngModel)]="homeContent.heroImage" name="heroImage">
     </div>
 
@@ -19,7 +19,7 @@
     <h4 class="mt-4">Section 2</h4>
     <hr />
     <div class="mb-3">
-      <label for="welcomeTitle" class="form-label">Welcome Title</label>
+      <label for="welcomeTitle" class="form-label fw-bold">Welcome Title</label>
       <input type="text" class="form-control" id="welcomeTitle" [(ngModel)]="homeContent.welcomeTitle"
         name="welcomeTitle">
     </div>
@@ -28,31 +28,31 @@
     <h4 class="mt-4">Section 3</h4>
     <hr />
     <div class="mb-3">
-      <label for="missionTitle" class="form-label">Mission Title</label>
+      <label for="missionTitle" class="form-label fw-bold">Mission Title</label>
       <input type="text" class="form-control" id="missionTitle" [(ngModel)]="homeContent.missionTitle"
         name="missionTitle">
     </div>
 
     <div class="mb-3">
-      <label for="missionDescription" class="form-label">Mission Description</label>
+      <label for="missionDescription" class="form-label fw-bold">Mission Description</label>
       <textarea class="form-control" id="missionDescription" rows="4" [(ngModel)]="homeContent.missionDescription"
         name="missionDescription"></textarea>
     </div>
 
     <div class="mb-3">
-      <label for="missionParagraph1" class="form-label">Mission Paragraph 1</label>
+      <label for="missionParagraph1" class="form-label fw-bold">Mission Paragraph 1</label>
       <textarea class="form-control" id="missionParagraph1" rows="4" [(ngModel)]="homeContent.missionParagraph1"
         name="missionParagraph1"></textarea>
     </div>
 
     <div class="mb-3">
-      <label for="missionParagraph2" class="form-label">Mission Paragraph 2</label>
+      <label for="missionParagraph2" class="form-label fw-bold">Mission Paragraph 2</label>
       <textarea class="form-control" id="missionParagraph2" rows="4" [(ngModel)]="homeContent.missionParagraph2"
         name="missionParagraph2"></textarea>
     </div>
 
     <div class="mb-3">
-      <label for="missionImage" class="form-label">Mission Image URL</label>
+      <label for="missionImage" class="form-label fw-bold">Mission Image URL</label>
       <input type="text" class="form-control" id="missionImage" [(ngModel)]="homeContent.missionImage"
         name="missionImage">
     </div>
