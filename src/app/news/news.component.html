@@ -1,60 +1,33 @@
-<div class="container">
-    <!-- Hero Section -->
-    <div class="hero-section">
-        <div class="hero-image"></div>
-        <div class="hero-content container text-center text-white">
-            <h1 class="display-1 fw-bold">Latest News</h1>
-        </div>
+<!-- Hero Section -->
+<div class="hero-section">
+    <div class="hero-image" [style.backgroundImage]="'url(' + newsContent.heroImage + ')'"></div>
+    <div class="hero-content container text-center text-white">
+        <h1 class="display-1 fw-bold">{{ newsContent.heroTitle }}</h1>
     </div>
+</div>
 
+<div class="container">
     <!-- News Section -->
-    <div class="news-section py-5 bg-white">
+    <div class="news-section">
         <!-- Cards -->
-        <div class="container-fluid py-3">
+        <div class="container-fluid py-5">
             <div class="row justify-content-center g-4">
-                <!-- Card 1 -->
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm border-0">
-                        <img src="/members-celebration.jpg" class="card-img-top" alt="Members Celebration"
+                <!-- Dinamic News Cards -->
+                <div *ngFor="let card of newsContent.cards" class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 bg-light">
+                        <!-- News Card Image -->
+                        <img [src]="card.imageCard" class="card-img-top" alt="News Image"
                             style="height: 200px; object-fit: cover;">
                         <div class="card-body">
-                            <h5 class="card-title" style="color: #115D5A;">Honoring Long-Time Members</h5>
-                            <p class="card-text">
-                                Congratulations to our dedicated members celebrating 25+ years
-                                with the society! Thank you for your commitment to gardening
-                                and the community.
+                            <!-- News Title -->
+                            <h5 class="card-title" style="color: #115D5A;">{{ card.titleCard }}</h5>
+                            <!-- News Description -->
+                            <p class="card-text text-dark">
+                                {{ card.descriptionCard }}
                             </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm border-0">
-                        <img src="/bursary.jpg" class="card-img-top" alt="Bursary"
-                            style="height: 200px; object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title" style="color: #115D5A;">$300 Bursary Now Available</h5>
-                            <p class="card-text">
-                                Elmvale High School students can apply for our annual bursary to
-                                support post-secondary studies in horticulture. More details in
-                                the Bursaries section.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm border-0">
-                        <img src="/photography-contest.jpg" class="card-img-top" alt="Photography Contest"
-                            style="height: 200px; object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title" style="color: #115D5A;">Photography Contest Open</h5>
-                            <p class="card-text">
-                                Submit your best garden, flower, or bird photos for our annual
-                                competition! Winning images will be featured on our official
-                                bookmarks.
+                            <!-- News Date -->
+                            <p class="card-text text-muted">
+                                <strong>Date:</strong> {{ card.date | date:'longDate' }}
                             </p>
                         </div>
                     </div>

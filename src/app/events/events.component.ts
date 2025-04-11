@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { EventsContentService } from '../services/events-content.service';
-import { EventsContent } from '../models//events-content.model';
+import { EventsContent } from '../models/events-content.model';
 
 @Component({
   selector: 'app-events',
