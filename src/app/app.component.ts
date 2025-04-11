@@ -23,6 +23,7 @@ export class AppComponent {
       .subscribe((event: any) => {
         const currentUrl = event.urlAfterRedirects;
         this.showLayout = !currentUrl.startsWith('/admin');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
   }
 }
