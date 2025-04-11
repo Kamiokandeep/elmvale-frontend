@@ -1,4 +1,59 @@
-<div class="container mt-5">
-    <h2>Edit</h2>
-    <p>edit-events works!</p>
+<div class="container py-5">
+    <h2 class="mb-4">Manage the Events Page</h2>
+    <form (ngSubmit)="save()">
+
+        <!-- Section 1 -->
+        <h4 class="mt-4">Section 1</h4>
+        <hr />
+        <div class="mb-4">
+            <label class="form-label">Hero Title</label>
+            <input type="text" [(ngModel)]="eventsContent.heroTitle" name="heroTitle" class="form-control" />
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label">Hero Image URL</label>
+            <input type="text" [(ngModel)]="eventsContent.heroImage" name="heroImage" class="form-control" />
+        </div>
+
+        <!-- Section 2 -->
+        <h4 class="mt-4">Section 2</h4>
+        <hr />
+        <div class="mb-4">
+            <label class="form-label">Cards</label>
+
+            <div *ngIf="eventsContent.cards.length === 0" class="text-muted mb-2">
+                No event cards added yet.
+            </div>
+
+            <div *ngFor="let card of eventsContent.cards; let i = index" class="mb-3 border rounded p-3" style="background: #eeeeee;">
+                <div class="mb-3">
+                    <label class="form-label">Image URL</label>
+                    <input type="text" [(ngModel)]="card.imageCard" name="imageCard{{i}}" class="form-control mb-2" placeholder="Image URL" />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Title</label>
+                    <input type="text" [(ngModel)]="card.titleCard" name="titleCard{{i}}" class="form-control mb-2" placeholder="Title" />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Description</label>
+                    <textarea [(ngModel)]="card.descriptionCard" name="descriptionCard{{i}}" class="form-control mb-2" rows="2" placeholder="Description"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Date</label>
+                    <input type="date" [(ngModel)]="card.date" name="date{{i}}" class="form-control mb-2" />
+                </div>
+
+                <button class="btn btn-sm btn-outline-danger" (click)="deleteCard(i)">Remove</button>
+            </div>
+
+            <button type="button" class="btn btn-sm btn-outline-success mt-2" (click)="addEventCard()">+ Add Card</button>
+        </div>
+
+        <hr />
+
+        <button type="submit" class="btn btn-sm btn-outline-success mt-2">Save</button>
+    </form>
 </div>

@@ -1,55 +1,33 @@
-<div class="container">
-    <!-- Hero Section -->
-    <div class="hero-section">
-        <div class="hero-image"></div>
-        <div class="hero-content container text-center text-white">
-            <h1 class="display-1 fw-bold">Upcoming Events</h1>
-        </div>
+<!-- Hero Section -->
+<div class="hero-section">
+    <div class="hero-image" [style.backgroundImage]="'url(' + eventsContent.heroImage + ')'"></div>
+    <div class="hero-content container text-center text-white">
+        <h1 class="display-1 fw-bold">{{ eventsContent.heroTitle }}</h1>
     </div>
+</div>
 
+<div class="container">
     <!-- Events Section -->
     <div class="events-section">
         <!-- Cards -->
         <div class="container-fluid py-5">
             <div class="row justify-content-center g-4">
-                <!-- Card 1 -->
-                <div class="col-md-4">
+                <!-- Dinamic Event Cards -->
+                <div *ngFor="let card of eventsContent.cards" class="col-md-4">
                     <div class="card h-100 shadow-sm border-0 bg-light">
-                        <img src="/plant-sale.jpg" class="card-img-top" alt="Plant Sale"
+                        <!-- Event Card Image -->
+                        <img [src]="card.imageCard" class="card-img-top" alt="Event Image"
                             style="height: 200px; object-fit: cover;">
                         <div class="card-body">
-                            <h5 class="card-title" style="color: #115D5A;">Plant Sale</h5>
+                            <!-- Event Title -->
+                            <h5 class="card-title" style="color: #115D5A;">{{ card.titleCard }}</h5>
+                            <!-- Event Description -->
                             <p class="card-text text-dark">
-                                Don't miss our annual plant sale, featuring a special selection of flowers, shrubs, and
-                                trees.
+                                {{ card.descriptionCard }}
                             </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm border-0 bg-light">
-                        <img src="/birds-talk.jpg" class="card-img-top" alt="Birds Talk"
-                            style="height: 200px; object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title" style="color: #115D5A;">Birds & Gardening Talk</h5>
-                            <p class="card-text text-dark">
-                                Learn which flowers and shrubs attract local birds with insights from our guest speaker.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm border-0 bg-light">
-                        <img src="/gardening-trip.jpg" class="card-img-top" alt="Gardening Trip"
-                            style="height: 200px; object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title" style="color: #115D5A;">Annual Gardening Trip</h5>
-                            <p class="card-text text-dark">
-                                Join us for a special excursion to visit gardens and horticultural events in the region.
+                            <!-- Event Date -->
+                            <p class="card-text text-muted">
+                                <strong>Date:</strong> {{ card.date | date:'longDate' }}
                             </p>
                         </div>
                     </div>
