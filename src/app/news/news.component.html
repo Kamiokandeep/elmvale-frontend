@@ -1,9 +1,9 @@
 <div class="container">
     <!-- Hero Section -->
-    <div class="hero-section">
-        <div class="hero-image" [style.backgroundImage]="'url(' + newsContent.heroImage + ')'"></div>
-        <div class="hero-content container text-center text-white">
-            <h1 class="display-1 fw-bold">{{ newsContent.heroTitle }}</h1>
+    <div class="position-relative" style="height: 400px;">
+        <img [src]="newsContent.heroImage" alt="Hero Image" class="w-100 h-100 object-fit-cover">
+        <div class="position-absolute top-50 start-50 translate-middle text-white text-center">
+            <h1 class="display-3 fw-bold" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.6);">{{ newsContent.heroTitle }}</h1>
         </div>
     </div>
 
