@@ -16,6 +16,7 @@ export class EditBursariesComponent implements OnInit {
     title: '',
     content: '',
     imageUrl: '',
+    imageUrlDecoration: '',
     bursaryItems: [],
     additionalTitle: '',
     sideImageUrl: '',

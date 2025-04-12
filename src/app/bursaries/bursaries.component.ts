@@ -17,6 +17,7 @@ export class BursariesComponent implements OnInit {
     title: '',
     content: '',
     imageUrl: '',
+    imageUrlDecoration: '',
     additionalTitle: '',
     sideImageUrl: '',
     bursaryItems: [],

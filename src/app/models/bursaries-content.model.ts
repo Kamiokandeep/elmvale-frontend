@@ -8,6 +8,7 @@ export interface BursariesContent {
     title: string;
     content: string;
     imageUrl: string;
+    imageUrlDecoration: string;
     bursaryItems: BursaryItem[];
     additionalTitle: string;
     sideImageUrl: string;
