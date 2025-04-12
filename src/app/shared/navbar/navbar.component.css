@@ -9,6 +9,15 @@ body {
     padding-left: 20px;
 }
 
+.navbar-home {
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+}
+
+.navbar-solid {
+    background-color: rgba(17, 93, 90, 1);
+}
+
 .navbar-brand:hover .navbar-logo {
     transform: scale(1.05);
 }
@@ -20,7 +29,7 @@ body {
 
 .nav-link {
     color: #fff;
-   font-size: large;
+    font-size: large;
 }
 
 .nav-link.active {
