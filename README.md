@@ -13,4 +13,5 @@ To start a local development server, run:
 
 ```bash
 ng serve
+ng build --configuration=production --output-path=../elmvale-backend/public
 ```
