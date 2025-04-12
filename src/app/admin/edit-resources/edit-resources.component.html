@@ -1,4 +1,101 @@
-<div class="container mt-5">
-    <h2>Edit</h2>
-    <p>edit-resources works!</p>
+<div class="container py-5">
+    <h2 class="mb-4">Manage Resources Content</h2>
+    <form (ngSubmit)="onSave()">
+
+        <!-- Section 1 -->
+        <h4 class="mt-4">Section 1</h4>
+        <hr />
+        <div class="mb-4">
+            <label class="form-label fw-bold">Hero Title</label>
+            <input type="text" [(ngModel)]="content.heroTitle" name="heroTitle" class="form-control" />
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label fw-bold">Hero Image URL</label>
+            <input type="text" [(ngModel)]="content.heroImage" name="heroImage" class="form-control" />
+        </div>
+
+        <!-- Section 2 -->
+        <h4 class="mt-4">Section 2</h4>
+        <hr />
+        <div class="mb-4">
+            <label class="form-label fw-bold">Intro Paragraph</label>
+            <textarea [(ngModel)]="content.introText" name="introText" class="form-control" rows="3"></textarea>
+        </div>
+
+        <!-- Section 3 -->
+        <h4 class="mt-4">Section 3</h4>
+        <hr />
+        <div *ngIf="content.cards.length === 0" class="text-muted mb-2">
+            No resource cards added yet.
+        </div>
+
+        <div *ngFor="let card of content.cards; let i = index" class="mb-3 border rounded p-3"
+            style="background: #eeeeee;">
+            <div class="mb-3">
+                <label class="form-label fw-bold">Image URL</label>
+                <input type="text" [(ngModel)]="card.image" name="cardImage{{i}}" class="form-control mb-2" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-bold">Title</label>
+                <input type="text" [(ngModel)]="card.title" name="cardTitle{{i}}" class="form-control mb-2" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-bold">Description</label>
+                <textarea [(ngModel)]="card.description" name="cardDescription{{i}}" class="form-control mb-2"
+                    rows="2"></textarea>
+            </div>
+
+            <button type="button" class="btn btn-sm btn-outline-danger" (click)="removeCard(i)">Remove</button>
+        </div>
+
+        <button type="button" class="btn btn-sm btn-outline-success mt-2" (click)="addCard()">+ Add Card</button>
+
+        <!-- Section 4 -->
+        <h4 class="mt-5">Section 4</h4>
+        <hr />
+        <div class="mb-4">
+            <label class="form-label fw-bold">Section Title</label>
+            <input type="text" [(ngModel)]="content.sectionTitle" name="sectionTitle" class="form-control" />
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label fw-bold">Section Description</label>
+            <textarea [(ngModel)]="content.sectionDescription" name="sectionDescription" class="form-control"
+                rows="3"></textarea>
+        </div>
+
+        <div *ngIf="content.sectionList.length === 0" class="text-muted mb-2">
+            No section list items added yet.
+        </div>
+
+        <div *ngFor="let item of content.sectionList; let i = index" class="mb-3 border rounded p-3"
+            style="background: #f7f7f7;">
+            <div class="mb-2">
+                <label class="form-label fw-bold">Icon</label>
+                <input type="text" [(ngModel)]="item.icon" name="icon{{i}}" class="form-control mb-2" />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label fw-bold">Title</label>
+                <input type="text" [(ngModel)]="item.title" name="title{{i}}" class="form-control mb-2" />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label fw-bold">Content</label>
+                <textarea [(ngModel)]="item.content" name="content{{i}}" class="form-control mb-2" rows="2"></textarea>
+            </div>
+
+            <button type="button" class="btn btn-sm btn-outline-danger" (click)="removeListItem(i)">Remove</button>
+        </div>
+
+        <button type="button" class="btn btn-sm btn-outline-success mt-2" (click)="addListItem()">+ Add List
+            Item</button>
+
+        <hr class="mt-5" />
+
+        <button type="submit" class="btn btn-success mt-2">Save</button>
+    </form>
 </div>
