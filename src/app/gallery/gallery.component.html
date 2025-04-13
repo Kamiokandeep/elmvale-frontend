@@ -1,161 +1,219 @@
-<!-- Main Gallery Section -->
-<section class="photo-gallery container my-5">
-  <img src="/Arboretum Sunnidale park- 2023-1.jpg" alt="photo-gallery" height="600px" width="900px" />
-  <p class="text-center" color="green" style="font-size: 1.2rem; margin-top: 1rem;">
-    A picture is worth a thousand words! Explore the beauty of our gardens, events, and
-    photography contests.
-  </p>
+<div class="container">
 
-  <!-- Photo Gallery  -->
-  <div class="gallery-grid">
-    <div class="gallery-item" onclick="openLightbox(0)">
-      <img src="/aboretum-sunnidale-park-2023-2.jpg" alt="Aboretum Sunnidale" />
-      <div class="caption">Aboretum Sunnidale</div>
-    </div>
-    <div class="gallery-item" onclick="openLightbox(1)">
-      <img src="/Annual Meeting Nov -2024-Photo Contest.jpg" alt="Annual Meeting" />
-      <div class="caption">Amalading</div>
-    </div>
-    <div class="gallery-item" onclick="openLightbox(2)">
-      <img src="/Aboretum Sunnidale Park-2023-3.jpg" alt="Armistiding" />
-      <div class="caption">Armistiding</div>
-    </div>
-    <div class="gallery-item" onclick="openLightbox(3)">
-      <img src="/Annual Meeting-Nov 2024-1.jpg" alt="EHS - Pitchards Way" />
-      <div class="caption">EHS - Pitchards Way</div>
-    </div>
-    <div class="gallery-item" onclick="openLightbox(4)">
-      <img src="/Annual Meeting-Nov 2024-3.jpg" alt="EHS - Dementa" />
-      <div class="caption">EHS - Dementa</div>
-    </div>
-    <div class="gallery-item" onclick="openLightbox(5)">
-      <img src="/Christmas arrangments-1.jpg" alt="Clif Adams Imperialis" />
-      <div class="caption">Clif Adams Imperialis</div>
-    </div>
-    <div class="gallery-item" onclick="openLightbox(6)">
-      <img src="/Christmas arrangments-2.jpg" alt="EHS - Heskey Hybrid" />
-      <div class="caption">EHS - Heskey Hybrid</div>
-    </div>
-    <div class="gallery-item" onclick="openLightbox(7)">
-      <img src="/EDGE Commitee- Nov 2023-1.jpg" alt="EHS - BWeidling" />
-      <div class="caption">EHS - BWeidling</div>
-    </div>
-    <div class="gallery-item" onclick="openLightbox(8)">
-      <img src="/EDGE- Garden Tour Jul 2024-1.jpg" alt="EHS - The big sign" />
-      <div class="caption">EHS - The big sign</div>
-    </div>
-    <div class="gallery-item" onclick="openLightbox(9)">
-      <img src="/EDGE-Nov Speaker-1.jpg" alt="EHS - Photo Group" />
-      <div class="caption">EHS - Photo Group</div>
-    </div>
-    <div class="gallery-item" onclick="openLightbox(10)">
-      <img src="/Plant Sale -2023-1.jpg" alt="EHS - Photo Group 2" />
-      <div class="caption">EHS - Photo Group 2</div>
-    </div>
-    <div class="gallery-item" onclick="openLightbox(11)">
-      <img src="/Plant Sale 2023-2.jpg" alt="EHS - Photo Group 3" />
-      <div class="caption">EHS - Photo Group 3</div>
+  <!-- Section 1-->
+  <div class="position-relative" style="height: 400px;">
+    <img src="arboretum-sunnidale-park-2023-1.jpg" alt="Photo Gallery" class="w-100 h-100 object-fit-cover">
+    <div class="position-absolute top-50 start-50 translate-middle text-white text-center">
+      <h1 class="display-3 fw-bold" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.6);">
+        Photo Gallery
+      </h1>
     </div>
   </div>
-</section>
 
-<!-- Photo Contest Winners Section -->
-<section class="photo-contest-winners container mb-5">
-  <h2 class="text-center">Photo Contest Winners</h2>
-  <p class="text-center">
-    Each year, our members showcase their photography skills by capturing gardens, flowers,
-    birds, and nature. Winning photos are featured on our site.
-  </p>
-
-
-  <div class="gallery-grid">
-    <div class="gallery-item" onclick="openLightbox(12)">
-      <img src="/Market Garden Tour-3.jpg" alt="EHS - Painted lady" />
-      <div class="caption">EHS - Painted lady</div>
-    </div>
-    <div class="gallery-item" onclick="openLightbox(13)">
-      <img src="/Market Garden Tour-2.jpg" alt="Oak pathboard walks" />
-      <div class="caption">Oak pathboard walks</div>
-    </div>
-    <div class="gallery-item" onclick="openLightbox(14)">
-      <img src="/Market Garden Tour-1.jpg" alt="Another Winner" />
-      <div class="caption">Another Winner</div>
-    </div>
-    <div class="gallery-item" onclick="openLightbox(14)">
-      <img src="/winner.png" alt="Another Winner soon" />
-      <div class="caption">Another Winner soon </div>
+  <!-- Section 2 -->
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <p class="text-center fs-4 fw-semibold" style="color: #115D5A;">
+          A picture is worth a thousand words! Explore the beauty of our gardens, events, and photography contests.
+        </p>
+      </div>
     </div>
   </div>
-</section>
 
-<!-- Lightbox Modal -->
-<div id="lightbox-modal" class="lightbox-modal">
-  <span class="close" onclick="closeLightbox()">&times;</span>
-  <img class="lightbox-content" id="lightbox-image" alt="Modal Image" />
-  <div class="lightbox-caption" id="lightbox-caption"></div>
+  <!-- Section 3 -->
+  <div class="container py-1">
+    <div class="row g-4 justify-content-center">
 
-  <!-- Navigation arrows -->
-  <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-  <a class="next" onclick="changeSlide(1)">&#10095;</a>
+      <!-- Album 1 -->
+      <div class="col-md-4">
+        <div class="card shadow-sm rounded overflow-hidden">
+          <div id="carouselAlbum1" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="annual-meeting-nov-2024-4.jpg" class="d-block w-100 object-fit-cover" alt="Album 1">
+              </div>
+              <div class="carousel-item">
+                <img src="annual-meeting-nov-2024-6.jpg" class="d-block w-100 object-fit-cover" alt="Album 1">
+              </div>
+              <div class="carousel-item">
+                <img src="annual-meeting-nov-2024-photo-contest.jpg" class="d-block w-100 object-fit-cover"
+                  alt="Album 1">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselAlbum1" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselAlbum1" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
+          <div class="card-body text-center bg-light">
+            <h5 class="card-title mb-0 fw-bold" style="color: #115D5A;">Annual Meeting 2024</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Album 2 -->
+      <div class="col-md-4">
+        <div class="card shadow-sm rounded overflow-hidden">
+          <div id="carouselAlbum2" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="annual-meeting-nov-2024-3.jpg" class="d-block w-100 object-fit-cover" alt="Album 2">
+              </div>
+              <div class="carousel-item">
+                <img src="annual-meeting-nov 2024-2.jpg" class="d-block w-100 object-fit-cover" alt="Album 2">
+              </div>
+              <div class="carousel-item">
+                <img src="christmas-arrangments-1.jpg" class="d-block w-100 object-fit-cover" alt="Album 2">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselAlbum2" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselAlbum2" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
+          <div class="card-body text-center bg-light">
+            <h5 class="card-title mb-0 fw-bold" style="color: #115D5A;">Christmas Arrangements</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Album 3 -->
+      <div class="col-md-4">
+        <div class="card shadow-sm rounded overflow-hidden">
+          <div id="carouselAlbum3" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="christmas-arrangments-2.jpg" class="d-block w-100 object-fit-cover" alt="Album 3">
+              </div>
+              <div class="carousel-item">
+                <img src="christmas-arrangments-3.jpg" class="d-block w-100 object-fit-cover" alt="Album 3">
+              </div>
+              <div class="carousel-item">
+                <img src="Invasive-plant species-to-avoid.png" class="d-block w-100 object-fit-cover" alt="Album 3">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselAlbum3" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselAlbum3" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
+          <div class="card-body text-center bg-light">
+            <h5 class="card-title mb-0 fw-bold" style="color: #115D5A;">Nature & Species</h5>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Section 4 -->
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 text-center">
+        <h2 class="fw-bold mb-4" style="color: #115D5A;">Photo Contest Winners</h2>
+        <p class="fs-5">
+          Each year, our members showcase their photography skills by capturing gardens, flowers, birds, and nature.
+          Winning photos are featured on:
+        </p>
+      </div>
+    </div>
+
+    <!-- Section 5 -->
+    <div class="row g-4 justify-content-center mt-4">
+
+      <!-- Album 1 -->
+      <div class="col-md-4">
+        <div class="card shadow-sm rounded overflow-hidden">
+          <div id="carouselWinner1" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="market-garden-tour-2.jpg" class="d-block w-100 object-fit-cover" alt="Winner 1">
+              </div>
+              <div class="carousel-item">
+                <img src="christmas-arrangments-3.jpg" class="d-block w-100 object-fit-cover" alt="Winner 1">
+              </div>
+              <div class="carousel-item">
+                <img src="Invasive-plant species-to-avoid.png" class="d-block w-100 object-fit-cover" alt="Winner 1">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselWinner1" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselWinner1" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
+          <div class="card-body text-center bg-light">
+            <h5 class="card-title mb-0 fw-bold" style="color: #115D5A;">Winners 2023</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Album 2 -->
+      <div class="col-md-4">
+        <div class="card shadow-sm rounded overflow-hidden">
+          <div id="carouselWinner2" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="lavender-farm-tour-2024-1.jpg" class="d-block w-100 object-fit-cover" alt="Winner 2">
+              </div>
+              <div class="carousel-item">
+                <img src="market-garden-tour-1.jpg" class="d-block w-100 object-fit-cover" alt="Winner 2">
+              </div>
+              <div class="carousel-item">
+                <img src="Template-web-size_0004_Layer-14.png" class="d-block w-100 h-100 object-fit-cover"
+                  alt="Winner 2">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselWinner2" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselWinner2" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
+          <div class="card-body text-center bg-light">
+            <h5 class="card-title mb-0 fw-bold" style="color: #115D5A;">Winners 2024</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Album 3 -->
+      <div class="col-md-4">
+        <div class="card shadow-sm rounded overflow-hidden">
+          <div id="carouselWinner3" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="photography-contest.jpg" class="d-block w-100 object-fit-cover" alt="Winner 3">
+              </div>
+              <div class="carousel-item">
+                <img src="christmas-arrangments-3.jpg" class="d-block w-100 object-fit-cover" alt="Winner 3">
+              </div>
+              <div class="carousel-item">
+                <img src="Invasive-plant species-to-avoid.png" class="d-block w-100 object-fit-cover" alt="Winner 3">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselWinner3" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselWinner3" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
+          <div class="card-body text-center bg-light">
+            <h5 class="card-title mb-0 fw-bold" style="color: #115D5A;">Winners 2025</h5>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </div>
-
-<!-- footer Section -->
-<footer class="footer-section py-5" style="background-color: #115D5A; color: white;">
-  <div class="container" style="padding-left: 20px;">
-    <div class="row g-4">
-      <!-- Logo -->
-      <div class="col-md-4 text-center text-md-start">
-        <img src="/elmvale_logo.png" alt="Elmvale Horticultural Society Logo" class="mb-3" style="width: 100px;">
-        <h5 class="fw-bold mb-3">Elmvale Horticultural Society</h5>
-        <p class="opacity-75">Growing Together since 1979<br>Promoting horticulture and environmental
-          education in our community.</p>
-      </div>
-
-      <!-- Contact -->
-      <div class="col-md-4 text-center text-md-start">
-        <h5 class="fw-bold mb-3">Contact Information</h5>
-        <div class="d-flex align-items-center mb-2">
-          <i class="bi bi-envelope me-2"></i>
-          <a href="mailto:edgeelmvale@gmail.com"
-            class="text-white text-decoration-none hover-underline">edgeelmvale&#64;gmail.com</a>
-        </div>
-        <div class="d-flex align-items-center mb-2">
-          <i class="bi bi-geo-alt me-2"></i>
-          <span class="opacity-75">Elmvale Legion, 7 John Street, L0L 1P0</span>
-        </div>
-        <div class="d-flex align-items-center">
-          <i class="bi bi-telephone me-2"></i>
-          <a href="tel:+17057289348" class="text-white text-decoration-none hover-underline">(705)
-            728-9348</a>
-        </div>
-      </div>
-
-      <!-- Social Media -->
-      <div class="col-md-4 text-center text-md-start">
-        <h5 class="fw-bold mb-3">Quick Links</h5>
-        <ul class="list-unstyled">
-          <li class="mb-2"><a routerLink="/" class="text-white text-decoration-none hover-underline">Home</a></li>
-          <li class="mb-2"><a routerLink="/about" class="text-white text-decoration-none hover-underline">About</a></li>
-          <li class="mb-2"><a routerLink="/education"
-              class="text-white text-decoration-none hover-underline">Education</a></li>
-          <li class="mb-2"><a routerLink="/resources"
-              class="text-white text-decoration-none hover-underline">Resources</a></li>
-          <li class="mb-2"><a routerLink="/gallery" class="text-white text-decoration-none hover-underline">Gallery</a>
-          </li>
-          <li><a routerLink="/contact" class="text-white text-decoration-none hover-underline">Contact</a>
-          </li>
-        </ul>
-        <div class="mt-4 social-icons">
-          <a href="#" class="text-white me-3" style="font-size: 1.5rem;"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="text-white me-3" style="font-size: 1.5rem;"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="text-white" style="font-size: 1.5rem;"><i class="bi bi-youtube"></i></a>
-        </div>
-      </div>
-    </div>
-    <div class="row mt-5">
-      <div class="col-12 text-center opacity-75">
-        <p class="mb-0">&copy; 2023 Elmvale Horticultural Society. All rights reserved.</p>
-      </div>
-    </div>
-  </div>
-</footer>

@@ -1,4 +1,17 @@
-.gallery-section {
-    padding-top: 120px;
+.container {
+    padding-top: 100px;
     padding-bottom: 50px;
+}
+
+.carousel-item {
+    height: 450px;
+}
+
+.carousel-inner {
+    height: 450px;
+}
+
+.carousel-inner img {
+    height: 100%;
+    object-fit: cover;
 }
