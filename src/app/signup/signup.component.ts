@@ -22,7 +22,7 @@ export class SignupComponent {
       email: ['', Validators.required],
       address: ['', Validators.required],
       city: ['', Validators.required],
-      postalCode: ['', Validators.required],
+      postalCode: ['', Validators.required]
 
 
     })
