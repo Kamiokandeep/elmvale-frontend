@@ -1,88 +1,95 @@
 <div class="container py-5">
-    <h2 class="mb-4">Manage the Bursaries Content</h2>
-    <form (ngSubmit)="save()">
-  
-      <!-- Section 1 -->
-      <h4 class="mt-4">Section 1</h4>
-      <hr />
-      <div class="mb-4">
-        <label class="form-label fw-bold">Title</label>
-        <input class="form-control" [(ngModel)]="content.title" name="title" placeholder="Enter title" />
-  
-        <label class="form-label fw-bold mt-3">Content</label>
-        <textarea class="form-control" rows="4" [(ngModel)]="content.content" name="content" placeholder="Enter content"></textarea>
-  
-        <label class="form-label fw-bold mt-3">Main Image URL</label>
-        <input class="form-control" [(ngModel)]="content.imageUrl" name="imageUrl" placeholder="Enter Image URL" />
+  <h2 class="fw-bold mb-4 text-center" style="color:#115D5A;">Manage Bursaries Content</h2>
+  <form (ngSubmit)="save()">
 
-        <label class="form-label fw-bold mt-3">Image URL Decoration</label>
-        <input class="form-control" [(ngModel)]="content.imageUrlDecoration" name="imageUrlDecoration" placeholder="Enter Image URL" />
+    <!-- Section 1 -->
+    <h4 class="mt-4">Section 1</h4>
+    <hr />
+    <div class="mb-4">
+      <label class="form-label fw-bold">Title</label>
+      <input class="form-control" [(ngModel)]="content.title" name="title" placeholder="Enter title" />
+
+      <label class="form-label fw-bold mt-3">Content</label>
+      <textarea class="form-control" rows="4" [(ngModel)]="content.content" name="content"
+        placeholder="Enter content"></textarea>
+
+      <label class="form-label fw-bold mt-3">Main Image URL</label>
+      <input class="form-control" [(ngModel)]="content.imageUrl" name="imageUrl" placeholder="Enter Image URL" />
+
+      <label class="form-label fw-bold mt-3">Image URL Decoration</label>
+      <input class="form-control" [(ngModel)]="content.imageUrlDecoration" name="imageUrlDecoration"
+        placeholder="Enter Image URL" />
+    </div>
+
+    <!-- Section 2 -->
+    <h4 class="mt-4">Section 2</h4>
+    <hr />
+    <!-- Additional Section -->
+    <div class="mb-4">
+      <label class="form-label fw-bold">Additional Title</label>
+      <input class="form-control" [(ngModel)]="content.additionalTitle" name="additionalTitle"
+        placeholder="District 16..." />
+
+      <label class="form-label fw-bold mt-3">Side Image URL</label>
+      <input class="form-control" [(ngModel)]="content.sideImageUrl" name="sideImageUrl"
+        placeholder="/edge_speaker_set.jpg" />
+    </div>
+
+    <div class="mb-4">
+      <h4 class="fw-bold mb-3">Bursary Items</h4>
+
+      <div *ngIf="content.bursaryItems.length === 0" class="text-muted mb-2">
+        There are no articles added yet.
       </div>
 
-      <!-- Section 2 -->
-      <h4 class="mt-4">Section 2</h4>
-      <hr />
-      <!-- Additional Section -->
-      <div class="mb-4">
-        <label class="form-label fw-bold">Additional Title</label>
-        <input class="form-control" [(ngModel)]="content.additionalTitle" name="additionalTitle" placeholder="District 16..." />
-  
-        <label class="form-label fw-bold mt-3">Side Image URL</label>
-        <input class="form-control" [(ngModel)]="content.sideImageUrl" name="sideImageUrl" placeholder="/edge_speaker_set.jpg" />
-      </div>
-
-      <div class="mb-4">
-        <h4 class="fw-bold mb-3">Bursary Items</h4>
-
-        <div *ngIf="content.bursaryItems.length === 0" class="text-muted mb-2">
-          There are no articles added yet.
-        </div>
-  
-        <div *ngFor="let item of content.bursaryItems; let i = index" class="border rounded p-3 mb-3" style="background: #eeeeee;">
-          <div class="mb-2">
-            <label class="form-label fw-bold">Icon Class</label>
-            <input class="form-control" [(ngModel)]="item.icon" name="itemIcon{{i}}" placeholder="bi bi-icon-name" />
-          </div>
-  
-          <div class="mb-2">
-            <label class="form-label fw-bold">Title</label>
-            <input class="form-control" [(ngModel)]="item.title" name="itemTitle{{i}}" placeholder="Item title" />
-          </div>
-  
-          <div class="mb-2">
-            <label class="form-label fw-bold">Description</label>
-            <textarea class="form-control" rows="2" [(ngModel)]="item.description" name="itemDesc{{i}}" placeholder="Item description"></textarea>
-          </div>
-  
-          <button class="btn btn-outline-danger btn-sm mt-2" type="button" (click)="removeItem(i)">Remove</button>
-        </div>
-  
-        <button class="btn btn-outline-success" type="button" (click)="addItem()">Add Bursary Item</button>
-      </div>
-
-      <!-- Section 3 -->
-      <h4 class="mt-4">Section 3</h4>
-      <hr />
-      <div class="mb-4">
-        <h4 class="fw-bold mb-3">More Information</h4>
-
+      <div *ngFor="let item of content.bursaryItems; let i = index" class="border rounded p-3 mb-3"
+        style="background: #eeeeee;">
         <div class="mb-2">
-          <label class="form-label fw-bold">Link Icon Class</label>
-          <input class="form-control" [(ngModel)]="content.additionalLinkIcon" name="linkIcon" placeholder="bi bi-link-45deg" />
+          <label class="form-label fw-bold">Icon Class</label>
+          <input class="form-control" [(ngModel)]="item.icon" name="itemIcon{{i}}" placeholder="bi bi-icon-name" />
         </div>
 
         <div class="mb-2">
-          <label class="form-label fw-bold">Link Text</label>
-          <input class="form-control" [(ngModel)]="content.additionalLinkText" name="linkText" placeholder="More information & application..." />
+          <label class="form-label fw-bold">Title</label>
+          <input class="form-control" [(ngModel)]="item.title" name="itemTitle{{i}}" placeholder="Item title" />
         </div>
 
         <div class="mb-2">
-          <label class="form-label fw-bold">Link URL</label>
-          <input class="form-control" [(ngModel)]="content.additionalLinkUrl" name="linkUrl" placeholder="https://..." />
+          <label class="form-label fw-bold">Description</label>
+          <textarea class="form-control" rows="2" [(ngModel)]="item.description" name="itemDesc{{i}}"
+            placeholder="Item description"></textarea>
         </div>
+
+        <button class="btn btn-outline-danger btn-sm mt-2" type="button" (click)="removeItem(i)">Remove</button>
       </div>
 
-      <button type="submit" class="btn btn-sm btn-outline-success mt-2">Save</button>
-    </form>
-  </div>
-  
+      <button class="btn btn-outline-success" type="button" (click)="addItem()">Add Bursary Item</button>
+    </div>
+
+    <!-- Section 3 -->
+    <h4 class="mt-4">Section 3</h4>
+    <hr />
+    <div class="mb-4">
+      <h4 class="fw-bold mb-3">More Information</h4>
+
+      <div class="mb-2">
+        <label class="form-label fw-bold">Link Icon Class</label>
+        <input class="form-control" [(ngModel)]="content.additionalLinkIcon" name="linkIcon"
+          placeholder="bi bi-link-45deg" />
+      </div>
+
+      <div class="mb-2">
+        <label class="form-label fw-bold">Link Text</label>
+        <input class="form-control" [(ngModel)]="content.additionalLinkText" name="linkText"
+          placeholder="More information & application..." />
+      </div>
+
+      <div class="mb-2">
+        <label class="form-label fw-bold">Link URL</label>
+        <input class="form-control" [(ngModel)]="content.additionalLinkUrl" name="linkUrl" placeholder="https://..." />
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-sm btn-outline-success mt-2">Save</button>
+  </form>
+</div>

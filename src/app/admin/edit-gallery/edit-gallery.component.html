@@ -1,4 +1,98 @@
-<div class="container mt-5">
-    <h2>Edit</h2>
-    <p>edit-gallery works!</p>
+<div class="container py-5">
+    <h2 class="fw-bold mb-4 text-center" style="color:#115D5A;">Manage Gallery Content</h2>
+
+    <form (ngSubmit)="saveContent()">
+
+        <!-- Section 1 -->
+        <h4 class="mt-4">Section 1</h4>
+        <hr />
+        <div class="mb-4">
+            <label class="form-label fw-bold">Hero Title</label>
+            <input type="text" [(ngModel)]="content.heroTitle" name="heroTitle" class="form-control" />
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label fw-bold">Hero Image URL</label>
+            <input type="text" [(ngModel)]="content.heroImage" name="heroImage" class="form-control" />
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label fw-bold">Intro Text</label>
+            <textarea [(ngModel)]="content.introText" name="introText" class="form-control" rows="3"></textarea>
+        </div>
+
+        <!-- Section 2 -->
+        <h4 class="mt-4">Section 2</h4>
+        <hr />
+        <div *ngIf="content.albums.length === 0" class="text-muted mb-2">
+            No albums added yet.
+        </div>
+
+        <div *ngFor="let album of content.albums; let i = index" class="mb-3 border rounded p-3"
+            style="background: #eeeeee;">
+            <div class="mb-3">
+                <label class="form-label fw-bold">Album Title</label>
+                <input type="text" [(ngModel)]="album.title" name="albumTitle{{i}}" class="form-control mb-2" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-bold">Image URLs</label>
+                <div *ngFor="let img of album.images; let j = index" class="input-group mb-2">
+                    <input type="text" [(ngModel)]="album.images[j]" name="albumImage{{i}}_{{j}}" class="form-control"
+                        placeholder="Image URL" />
+                </div>
+                <hr />
+                <button type="button" class="btn btn-sm btn-outline-secondary" (click)="album.images.push('')">+ Add Image</button>
+            </div>
+
+            <button type="button" class="btn btn-sm btn-outline-danger mt-2" (click)="deleteAlbum(i)">Remove Album</button>
+        </div>
+
+        <button type="button" class="btn btn-sm btn-outline-success mt-2" (click)="addAlbum()">+ Add Album</button>
+
+        <!-- Section 3 -->
+        <h4 class="mt-4">Section 3</h4>
+        <hr />
+        <div class="mb-4">
+            <label class="form-label fw-bold">Title</label>
+            <input type="text" [(ngModel)]="content.sectionTitle" name="sectionTitle" class="form-control" />
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label fw-bold">Description</label>
+            <textarea [(ngModel)]="content.sectionDescription" name="sectionDescription" class="form-control" rows="3"></textarea>
+        </div>
+
+        <!-- Section 4 -->
+        <h4 class="mt-5">Section 4</h4>
+        <hr />
+        <div *ngIf="content.winners.length === 0" class="text-muted mb-2">
+            No winner albums added yet.
+        </div>
+
+        <div *ngFor="let winner of content.winners; let i = index" class="mb-3 border rounded p-3"
+            style="background: #eeeeee;">
+            <div class="mb-3">
+                <label class="form-label fw-bold">Winner Album Title</label>
+                <input type="text" [(ngModel)]="winner.title" name="winnerTitle{{i}}" class="form-control mb-2" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-bold">Image URLs</label>
+                <div *ngFor="let img of winner.images; let j = index" class="input-group mb-2">
+                    <input type="text" [(ngModel)]="winner.images[j]" name="winnerImage{{i}}_{{j}}" class="form-control" placeholder="Image URL" />
+                </div>
+                <hr />
+                <button type="button" class="btn btn-sm btn-outline-success mt-2" (click)="winner.images.push('')">+ Add Image</button>
+            </div>
+
+            <button type="button" class="btn btn-sm btn-outline-danger mt-2" (click)="deleteWinnerAlbum(i)">Remove Winner Album</button>
+        </div>
+
+        <button type="button" class="btn btn-sm btn-outline-success mt-2" (click)="addWinnerAlbum()">+ Add Winner Album</button>
+
+        <hr />
+
+        <button type="submit" class="btn btn-sm btn-outline-success mt-2">Save</button>
+    </form>
 </div>
