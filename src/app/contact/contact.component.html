@@ -1,104 +1,90 @@
-<div class="container my-5">
-    <h2 class="text-center mb-3">Contact Us</h2>
-    <p class="text-center mb-5">
-        We'd love to hear from you! Whether you’re interested in joining our club, have questions about events,
-        or need gardening advice, feel free to reach out.
-    </p>
+<div class="container my-5" *ngIf="content">
+    <h2 class="text-center mb-3">{{ content.heroTitle }}</h2>
+    <p class="text-center mb-5">{{ content.heroText }}</p>
 
     <div class="row g-4 align-items-start">
         <!-- Contact Form -->
         <div class="col-lg-7">
-            <div class="card shadow rounded-4 p-4">
+            <div class="card rounded-4 p-4">
                 <h4 class="mb-4">Send Us a Message</h4>
-                <form>
+                <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
                     <div class="mb-3">
                         <label class="form-label">Full Name</label>
-                        <input type="text" class="form-control" placeholder="Enter your name" required>
+                        <input formControlName="fullName" type="text" class="form-control" placeholder="Enter your name"
+                            required>
                     </div>
+
                     <div class="mb-3">
                         <label class="form-label">Email Address</label>
-                        <input type="email" class="form-control" placeholder="Enter your email" required>
+                        <input formControlName="email" type="email" class="form-control" placeholder="Enter your email"
+                            required>
                     </div>
+
                     <div class="mb-3">
                         <label class="form-label">Phone Number</label>
-                        <input type="text" class="form-control" placeholder="Enter your phone number" required>
+                        <input formControlName="phone" type="text" class="form-control"
+                            placeholder="Enter your phone number" required>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Subject</label>
                         <div class="row row-cols-1 row-cols-sm-2">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="subject" id="generalInquiry"
-                                    required>
-                                <label class="form-check-label" for="generalInquiry">General Inquiry</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="subject" id="membershipInfo">
-                                <label class="form-check-label" for="membershipInfo">Membership Information</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="subject" id="eventDetails">
-                                <label class="form-check-label" for="eventDetails">Event Details</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="subject" id="photoContest">
-                                <label class="form-check-label" for="photoContest">Photo Contest Submission</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="subject" id="gardeningAdvice">
-                                <label class="form-check-label" for="gardeningAdvice">Gardening Advice</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="subject" id="other">
-                                <label class="form-check-label" for="other">Other</label>
+                            <div class="form-check"
+                                *ngFor="let s of ['General Inquiry', 'Membership Information', 'Event Details', 'Photo Contest Submission', 'Gardening Advice', 'Other']">
+                                <input class="form-check-input" type="radio" formControlName="subject" [value]="s"
+                                    [id]="s">
+                                <label class="form-check-label" [for]="s">{{ s }}</label>
                             </div>
                         </div>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Message</label>
-                        <textarea class="form-control" rows="4" placeholder="Enter your message" required></textarea>
+                        <textarea formControlName="message" class="form-control" rows="4"
+                            placeholder="Enter your message" required></textarea>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Preferred Contact Method</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="contactMethod" id="emailContact"
-                                required>
+                            <input class="form-check-input" type="radio" formControlName="preferredMethod" value="Email"
+                                id="emailContact" required>
                             <label class="form-check-label" for="emailContact">Email</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="contactMethod" id="phoneContact">
+                            <input class="form-check-input" type="radio" formControlName="preferredMethod" value="Phone"
+                                id="phoneContact">
                             <label class="form-check-label" for="phoneContact">Phone</label>
                         </div>
                     </div>
 
                     <div class="form-check mb-4">
-                        <input type="checkbox" class="form-check-input" id="consent" required>
+                        <input type="checkbox" class="form-check-input" formControlName="consent" id="consent" required>
                         <label class="form-check-label" for="consent">
                             I agree to be contacted by Elmvale District Garden Enthusiasts.
                         </label>
                     </div>
 
-                    <button type="submit" class="btn btn-outline-success">Send Message</button>
+                    <button type="submit" class="btn btn-outline-success" [disabled]="!contactForm.valid">Send
+                        Message</button>
                 </form>
             </div>
         </div>
 
-        <!-- Contact Info + Image -->
+        <!-- Image -->
         <div class="col-lg-5">
             <div class="card shadow rounded-4 overflow-hidden mb-4">
-                <img src="/nov-speaker-1.jpg" alt="Workshop" class="img-fluid w-100"
+                <img [src]="content.image || '/placeholder.jpg'" alt="Workshop" class="img-fluid w-100"
                     style="object-fit: cover; height: 450px;">
             </div>
-
+            <!-- Info -->
             <div class="p-4">
                 <hr />
-                <p><strong>Email: </strong> <a href="mailto:edgeelmvale@gmail.com">edgeelmvale&#64;gmail.com</a></p>
-                <p><strong>Phone: </strong> (705) 728-9348</p>
+                <p><strong>Email: </strong> <a [href]="'mailto:' + content.email">{{ content.email }}</a></p>
+                <p><strong>Phone: </strong> {{ content.phone }}</p>
                 <p><strong>Meeting Location: </strong></p>
-                <p>Elmvale Legion<br>7 John Street, Elmvale, ON, L0L 1P0</p>
-                <p>4th Wednesday of the month at 7:00 PM</p>
+                <p [innerHTML]="content.location"></p>
+                <p>{{ content.meetingDetails }}</p>
                 <hr />
             </div>
         </div>

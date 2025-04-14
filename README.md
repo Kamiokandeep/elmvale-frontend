@@ -17,6 +17,7 @@ ng serve
 
 Notes:
 ```bash
+ng generate component admin/home-messages
 ng generate service services/gallery-content
 ng build --configuration=production --output-path=../elmvale-backend/public
 ```

@@ -1,0 +1,32 @@
+<div class="container py-5">
+    <h2 class="fw-bold mb-4 text-center" style="color:#115D5A;">Contact Messages</h2>
+
+    <div *ngIf="messages.length === 0" class="text-center">
+        <p>No messages yet.</p>
+    </div>
+
+    <div *ngFor="let msg of messages" class="card mb-3 shadow-sm border-{{ msg.read ? 'secondary' : 'success' }}">
+        <div class="card-body">
+            <div class="row">
+
+                <div class="col-md-6">
+                    <h5 class="card-title">{{ msg.fullName }} <span *ngIf="!msg.read" class="badge bg-success">New</span></h5>
+                    <p><strong>Email:</strong> {{ msg.email }}</p>
+                    <p><strong>Phone:</strong> {{ msg.phone }}</p>
+                    <p><strong>Preferred Contact Method:</strong> {{ msg.preferredMethod }}</p>
+                    <p><strong>Consent:</strong> {{ msg.consent ? 'Yes' : 'No' }}</p>
+                    <p><small class="text-muted">Received on {{ msg.createdAt | date:'medium' }}</small></p>
+                </div>
+
+                <div class="col-md-6">
+                    <p><strong>Subject:</strong> {{ msg.subject }}</p>
+                    <p><strong>Message:</strong><br> {{ msg.message }}</p>
+
+                    <button *ngIf="!msg.read" class="btn  btn-outline-success btn-sm" (click)="markAsRead(msg._id)">
+                        Mark as Read
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

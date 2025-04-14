@@ -1,4 +1,43 @@
-<div class="container mt-5">
-    <h2>Edit</h2>
-    <p>edit-contact works!</p>
+<div class="container py-5">
+    <h2 class="fw-bold mb-4 text-center" style="color:#115D5A;">Manage Contact Content</h2>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <h4 class="mt-4">Section 1</h4>
+        <hr />
+        <div class="mb-3">
+            <label class="form-label fw-bold">Title</label>
+            <input type="text" class="form-control" formControlName="heroTitle" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-bold">Intro Text</label>
+            <textarea rows="3" class="form-control" formControlName="heroText"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-bold">Image URL</label>
+            <input type="text" class="form-control" formControlName="image" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-bold">Email</label>
+            <input type="email" class="form-control" formControlName="email" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-bold">Phone</label>
+            <input type="text" class="form-control" formControlName="phone" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-bold">Location</label>
+            <input type="text" class="form-control" formControlName="location" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-bold">Meeting Details</label>
+            <textarea rows="2" class="form-control" formControlName="meetingDetails"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-outline-success">Save</button>
+    </form>
 </div>

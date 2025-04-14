@@ -20,6 +20,7 @@ import { EditBursariesComponent } from './admin/edit-bursaries/edit-bursaries.co
 import { EditGalleryComponent } from './admin/edit-gallery/edit-gallery.component';
 import { EditContactComponent } from './admin/edit-contact/edit-contact.component';
 import { EditMembersComponent } from './admin/edit-members/edit-members.component';
+import { ContactMessagesComponent } from './admin/contact-messages/contact-messages.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -43,5 +44,6 @@ export const routes: Routes = [
     { path: 'gallery', component: EditGalleryComponent },
     { path: 'contact', component: EditContactComponent },
     { path: 'members', component: EditMembersComponent },
+    { path: 'contact-messages', component: ContactMessagesComponent },
   ]},
 ];
