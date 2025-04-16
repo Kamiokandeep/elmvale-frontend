@@ -22,6 +22,7 @@ import { EditGalleryComponent } from './admin/edit-gallery/edit-gallery.componen
 import { EditContactComponent } from './admin/edit-contact/edit-contact.component';
 import { EditMembersComponent } from './admin/edit-members/edit-members.component';
 import { ContactMessagesComponent } from './admin/contact-messages/contact-messages.component';
+import { UsersListComponent } from './admin/users-list/users-list.component';
 
 import { adminGuard } from './guards/admin.guard'; // Allows access only to users with the "admin" role
 import { authGuard } from './guards/auth.guard'; // Allows access to any logged-in user, regardless of their role.
@@ -57,6 +58,7 @@ export const routes: Routes = [
       { path: 'contact', component: EditContactComponent },
       { path: 'members', component: EditMembersComponent },
       { path: 'contact-messages', component: ContactMessagesComponent },
+      { path: 'users', component: UsersListComponent },
     ]
   },
 ];

@@ -1,0 +1,48 @@
+<div class="container my-4">
+    <div class="card shadow rounded-4 p-4">
+        <h3 class="mb-4 text-center text-success">Registered Users</h3>
+
+        <div *ngIf="loading" class="text-center py-3">
+            <div class="spinner-border text-success" role="status"></div>
+        </div>
+
+        <div *ngIf="error" class="alert alert-danger text-center">
+            {{ error }}
+        </div>
+
+        <div *ngIf="!loading && users.length === 0" class="text-center">
+            <p class="text-muted">No users found.</p>
+        </div>
+
+        <div *ngIf="!loading && users.length > 0">
+            <div class="table-responsive">
+                <table class="table table-bordered align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th class="text-center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of users">
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.role }}</td>
+                            <td class="text-center">
+                                <ng-container *ngIf="user.role !== 'admin'; else adminLabel">
+                                    <button class="btn btn-outline-danger btn-sm rounded-3"
+                                        (click)="deleteUser(user._id)">
+                                        <i class="bi bi-trash-fill me-1"></i> Delete
+                                    </button>
+                                </ng-container>
+                                <ng-template #adminLabel>
+                                    <span class="text-muted">Admin</span>
+                                </ng-template>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

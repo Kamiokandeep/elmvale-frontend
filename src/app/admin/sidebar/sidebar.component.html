@@ -1,7 +1,7 @@
 <div class="sidebar">
   <div class="sidebar-header text-center p-3">
     <img src="/elmvale_logo.png" alt="Logo" class="img-fluid mb-2" style="max-height: 60px;">
-    <h3 class="m-0">E.D.G.E. Dashboard</h3>
+    <h5 class="m-0">E.D.G.E. Dashboard</h5>
   </div>
 
   <ul class="nav flex-column">
@@ -45,13 +45,11 @@
         <i class="bi bi-envelope-at me-2"></i> Edit Contact
       </a>
     </li>
-    <!--
     <li class="nav-item">
-      <a class="nav-link" routerLink="/admin/members" routerLinkActive="active">
-        <i class="bi bi-people-fill me-2"></i> Edit Members
+      <a class="nav-link" routerLink="/admin/users" routerLinkActive="active">
+        <i class="bi bi-person-lines-fill me-2"></i> Manage Users
       </a>
-    </li>
-    -->
+    </li>    
     <li class="nav-item">
       <a class="nav-link" routerLink="/admin/contact-messages" routerLinkActive="active">
         <i class="bi bi-inbox-fill me-2"></i> Contact Messages
@@ -60,7 +58,7 @@
   </ul>
 
   <!-- Logout -->
-  <div class="mt-auto text-center p-3 border-top">
+  <div class="mt-auto text-center p-4">
     <button class="btn btn-outline-success w-100 rounded-3" (click)="logout()">
       <i class="bi bi-box-arrow-right me-2"></i> Logout
     </button>
