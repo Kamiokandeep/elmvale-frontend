@@ -10,6 +10,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { EditHomeComponent } from './admin/edit-home/edit-home.component';
 import { EditAboutComponent } from './admin/edit-about/edit-about.component';
@@ -22,7 +23,11 @@ import { EditContactComponent } from './admin/edit-contact/edit-contact.componen
 import { EditMembersComponent } from './admin/edit-members/edit-members.component';
 import { ContactMessagesComponent } from './admin/contact-messages/contact-messages.component';
 
+import { adminGuard } from './guards/admin.guard';
+
 export const routes: Routes = [
+
+  // Public routes
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'membership', component: MembershipComponent },
@@ -34,16 +39,23 @@ export const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'admin', component: AdminDashboardComponent, children: [
-    { path: 'home', component: EditHomeComponent },
-    { path: 'about', component: EditAboutComponent },
-    { path: 'events', component: EditEventsComponent },
-    { path: 'news', component: EditNewsComponent },
-    { path: 'resources', component: EditResourcesComponent },
-    { path: 'bursaries', component: EditBursariesComponent },
-    { path: 'gallery', component: EditGalleryComponent },
-    { path: 'contact', component: EditContactComponent },
-    { path: 'members', component: EditMembersComponent },
-    { path: 'contact-messages', component: ContactMessagesComponent },
-  ]},
+
+  // Protected routes
+  {
+    path: 'admin',
+    component: AdminDashboardComponent,
+    canActivate: [adminGuard],
+    children: [
+      { path: 'home', component: EditHomeComponent },
+      { path: 'about', component: EditAboutComponent },
+      { path: 'events', component: EditEventsComponent },
+      { path: 'news', component: EditNewsComponent },
+      { path: 'resources', component: EditResourcesComponent },
+      { path: 'bursaries', component: EditBursariesComponent },
+      { path: 'gallery', component: EditGalleryComponent },
+      { path: 'contact', component: EditContactComponent },
+      { path: 'members', component: EditMembersComponent },
+      { path: 'contact-messages', component: ContactMessagesComponent },
+    ]
+  },
 ];

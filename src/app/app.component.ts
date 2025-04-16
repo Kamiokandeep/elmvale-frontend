@@ -22,8 +22,7 @@ export class AppComponent {
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: any) => {
         const currentUrl = event.urlAfterRedirects;
-        this.showLayout = !currentUrl.startsWith('/admin');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        this.showLayout = !currentUrl.startsWith('/admin');        
       });
   }
 }
