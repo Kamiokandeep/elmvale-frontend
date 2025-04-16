@@ -41,9 +41,18 @@
             </ul>
 
             <div class="d-flex">
-                <button routerLink="/login" class="btn btn-outline-light me-2">Sign-In</button>
-                <button routerLink="/signup" class="btn btn-dark">Sign-Up</button>
+                <ng-container *ngIf="!isLoggedIn; else loggedIn">
+                    <button routerLink="/login" class="btn btn-outline-light me-2">Sign-In</button>
+                    <button routerLink="/signup" class="btn btn-dark">Sign-Up</button>
+                </ng-container>
+              
+                <ng-template #loggedIn>
+                    <button (click)="logout()" class="btn btn-outline-light">
+                        <i class="bi bi-box-arrow-right me-2"></i> Logout
+                    </button>
+                </ng-template>
             </div>
+              
         </div>
     </div>
 </nav>

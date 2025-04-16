@@ -23,14 +23,15 @@ import { EditContactComponent } from './admin/edit-contact/edit-contact.componen
 import { EditMembersComponent } from './admin/edit-members/edit-members.component';
 import { ContactMessagesComponent } from './admin/contact-messages/contact-messages.component';
 
-import { adminGuard } from './guards/admin.guard';
+import { adminGuard } from './guards/admin.guard'; // Allows access only to users with the "admin" role
+import { authGuard } from './guards/auth.guard'; // Allows access to any logged-in user, regardless of their role.
 
 export const routes: Routes = [
 
   // Public routes
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'membership', component: MembershipComponent },
+  { path: 'membership', component: MembershipComponent, canActivate: [authGuard] },
   { path: 'events', component: EventsComponent },
   { path: 'news', component: NewsComponent },
   { path: 'resources', component: ResourcesComponent },

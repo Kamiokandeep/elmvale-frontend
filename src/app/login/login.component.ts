@@ -30,11 +30,18 @@ export class LoginComponent {
 
   onSubmit() {
     if (this.loginForm.invalid) return;
-
+  
     this.authService.login(this.loginForm.value).subscribe({
       next: (res) => {
         localStorage.setItem('token', res.token);
-        this.router.navigate(['/admin']);
+  
+        const payload = JSON.parse(atob(res.token.split('.')[1]));
+  
+        if (payload.role === 'admin') {
+          this.router.navigate(['/admin']);
+        } else {
+          this.router.navigate(['/membership']);
+        }
       },
       error: (err) => {
         this.error = err.error.message || 'Login failed';

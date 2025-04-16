@@ -31,14 +31,14 @@ a.nav-link:hover {
     text-decoration: underline;
 }
 
-.logout-button {
-    background-color: white;
-    color: #198754;
-    border: 1px solid #198754;
+.btn-outline-success {
+    background-color: #115D5A;
+    color: #ffffff;
+    border-color: #ffffff;
     transition: background-color 0.2s ease;
 }
 
-.logout-button:hover {
-    background-color: #e6f4ec;
-    color: #198754;
+.btn-outline-success:hover {
+    background-color: #ffffff;
+    color: #115D5A;
 }
